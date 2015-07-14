@@ -13,6 +13,3 @@
 *.a
 mkmf.log
 node_modules/
-.eslintrc
-.rubocop.yml
-.scss-lint.yml
