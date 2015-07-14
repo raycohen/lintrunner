@@ -1,0 +1,30 @@
+{
+  "include_paths": ["."],
+  "require": ["example_plugin.rb"],
+  "linters": {
+    "binding.pry check": {
+      "plugin": "BindingPryCheck",
+      "runner": "Repo",
+      "match": ".rb",
+      "disabled": "true"
+    },
+    "scss": {
+      "command": "scss-lint -f JSON --config .scss-lint.yml",
+      "parser": "SCSSLint",
+      "runner": "Diff",
+      "match": ".scss"
+    },
+    "rubocop": {
+      "command": "rubocop -f json --config .rubocop.yml",
+      "parser": "Rubocop",
+      "runner": "Repo",
+      "match": ".rb"
+    },
+    "eslint": {
+      "command": "eslint -f compact -c .eslintrc",
+      "parser": "Eslint",
+      "runner": "Repo",
+      "match": ".js"
+    }
+  }
+}
