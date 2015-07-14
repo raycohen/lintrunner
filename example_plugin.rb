@@ -38,6 +38,11 @@ module Lintrunner
         ((s.size - s.grep(" ".."~").size) / s.size.to_f) > 0.30
       end
 
+      def test
+        # This should output a linter warning
+        require 'pry'; binding.pry
+      end
+
     end
   end
 end

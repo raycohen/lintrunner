@@ -1,31 +1,3 @@
-# Lintrunner
+This is still currently a work in progress. However, it should be functional enough to run linters with various runners such as `Diff`, or `Repo`.
 
-TODO: Write a gem description
-
-## Installation
-
-Add this line to your application's Gemfile:
-
-```ruby
-gem 'lintrunner'
-```
-
-And then execute:
-
-    $ bundle
-
-Or install it yourself as:
-
-    $ gem install lintrunner
-
-## Usage
-
-TODO: Write usage instructions here
-
-## Contributing
-
-1. Fork it ( https://github.com/[my-github-username]/lintrunner/fork )
-2. Create your feature branch (`git checkout -b my-new-feature`)
-3. Commit your changes (`git commit -am 'Add some feature'`)
-4. Push to the branch (`git push origin my-new-feature`)
-5. Create a new Pull Request
+To try it out, clone this repo, run `bundle install` and simply run `./bin/lintrunner` to see this in action. More documentation coming soon.

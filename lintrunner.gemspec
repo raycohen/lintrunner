@@ -10,7 +10,7 @@ Gem::Specification.new do |spec|
   spec.email         = ["ivan.tse1@gmail.com"]
   spec.summary       = %q{Run multiple lints with various runners}
   spec.description   = %q{lintrunner}
-  spec.homepage      = ""
+  spec.homepage      = "https://github.com/paperlesspost/lintrunner"
   spec.license       = "MIT"
 
   spec.files         = `git ls-files -z`.split("\x0")
