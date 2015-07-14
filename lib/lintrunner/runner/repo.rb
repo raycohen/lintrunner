@@ -22,7 +22,7 @@ module Lintrunner
 
       def files
         files = []
-        git.head.target.tree.walk_blobs { |root, entry| files << "#{root}#{entry[:name]}" }
+        git.lookup(git.head.target).tree.walk_blobs { |root, entry| files << "#{root}#{entry[:name]}" }
         files
       end
 
