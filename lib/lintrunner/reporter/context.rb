@@ -17,6 +17,7 @@ module Lintrunner
         range = start..(message.line + 2)
         lines = ::File.readlines(::File.join(options[:path], message.filename))[range]
         message_index = lineno - start
+        lines << "" if lines[message_index].nil? # `#lines` does not count trailing new line
         lines[message_index] = lines[message_index].color(:red)
         lines.join
       end
