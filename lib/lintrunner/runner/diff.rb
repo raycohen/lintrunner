@@ -9,6 +9,7 @@ module Lintrunner
           next if patch.delta.binary?
           next if filename.end_with?('app/styles/pattern-guide/pattern-guide.scss')
           next unless filename =~ match
+          next if patch.delta.renamed?
 
           before_contents = contents_for(patch.delta, :src)
           after_contents = contents_for(patch.delta, :dst)

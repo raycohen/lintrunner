@@ -5,7 +5,7 @@ module Lintrunner
     end
 
     def git_changeset
-      git.diff(git_common_ancestor, 'HEAD', context_lines: 10000)
+      git.diff(git_common_ancestor, 'HEAD', context_lines: 10000).find_similar!
     end
   end
 end
