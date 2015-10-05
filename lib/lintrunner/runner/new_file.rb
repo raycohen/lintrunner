@@ -9,6 +9,7 @@ module Lintrunner
           next if patch.delta.binary?
           next unless patch.delta.added?
           next unless filename =~ match
+          next if patch.delta.renamed?
 
           full_path = File.join(path, filename)
 
