@@ -12,7 +12,7 @@ module Lintrunner
 
           full_path = File.join(path, filename)
 
-          messages = executor.execute(full_path, filename: filename)
+          messages = executor.execute(full_path, filename: filename, path: path)
           warnings.concat messages
           output = messages.collect do |message|
             reporter.report(message)

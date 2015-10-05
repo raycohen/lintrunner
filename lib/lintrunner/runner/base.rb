@@ -8,7 +8,7 @@ module Lintrunner
       def initialize(path:, match:, executor:)
         self.path = path
         self.executor = executor
-        self.match = Regexp.new(Regexp.escape(match))
+        self.match = Regexp.new(match)
         self.git = Rugged::Repository.new(path)
       end
 

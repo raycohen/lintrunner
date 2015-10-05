@@ -17,8 +17,8 @@ module Lintrunner
             before_file = tempfile(before_contents)
             after_file = tempfile(after_contents)
 
-            before_messages = executor.execute(before_file, filename: filename)
-            after_messages = executor.execute(after_file, filename: filename)
+            before_messages = executor.execute(before_file, filename: filename, path: path)
+            after_messages = executor.execute(after_file, filename: filename, path: path)
 
             line_map = line_map_for(patch)
             after_messages.each do |lint|
@@ -31,7 +31,7 @@ module Lintrunner
             end
           elsif after_contents
             after_file = tempfile(after_contents)
-            after_messages = executor.execute(after_file, filename: filename)
+            after_messages = executor.execute(after_file, filename: filename, path: path)
             warnings.concat after_messages
             output = after_messages.collect do |message|
               reporter.report(message)
