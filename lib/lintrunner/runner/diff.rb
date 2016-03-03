@@ -56,16 +56,6 @@ module Lintrunner
         @git.lookup(ref).content if ref != "0000000000000000000000000000000000000000"
       end
 
-      def line_map_for(patch)
-        line_map = []
-        patch.hunks.first.lines.each do |line|
-          if line.new_lineno != -1
-            line_map[line.new_lineno] = line.old_lineno == -1 ? nil : line.old_lineno
-          end
-        end
-        line_map
-      end
-
       def tempfile(string)
         t = Tempfile.new('diff_file')
         # ensure tempfiles aren't unlinked when GC runs by maintaining a reference to them.
