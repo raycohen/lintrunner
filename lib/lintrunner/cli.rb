@@ -24,9 +24,11 @@ module Lintrunner
         path: path,
         ignore: ignore_messages)
 
-      config = JSON.parse(File.read(Dir.pwd + "/.lintrunner_config"))
+      config_file = File.join(Dir.pwd, options[:config])
+
+      config = JSON.parse(File.read(config_file))
       include_paths(config["include_paths"])
-      require_files(config["require"])
+      require_files(config["require"]) if config["require"]
 
       config["linters"].each do |name, config|
         next if config["disabled"]

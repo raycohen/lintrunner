@@ -19,6 +19,7 @@ require "lintrunner/parser/scss_lint"
 require "lintrunner/parser/rubocop"
 require "lintrunner/parser/brakeman"
 require "lintrunner/parser/ignore"
+require "lintrunner/parser/foodcritic"
 
 # Runners
 require "lintrunner/runner/base"
