@@ -17,7 +17,7 @@ module Lintrunner
           end
         end
 
-        changed_cookbooks.each do |cookbook, patches|
+        changed_cookbooks.uniq.each do |cookbook, patches|
           before_messages = []
           after_messages = []
           Dir.chdir(path) do
