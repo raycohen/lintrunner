@@ -44,18 +44,6 @@ module Lintrunner
 
       private
 
-      # Get the file contents of a delta
-      # if type=:src, return original file
-      # if type=:dst, return modified file
-      def contents_for(delta, type = :dst)
-        ref = if type == :src
-          delta.old_file[:oid]
-        elsif type == :dst
-          delta.new_file[:oid]
-        end
-        @git.lookup(ref).content if ref != "0000000000000000000000000000000000000000"
-      end
-
       def tempfile(string)
         t = Tempfile.new('diff_file')
         # ensure tempfiles aren't unlinked when GC runs by maintaining a reference to them.

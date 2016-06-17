@@ -14,11 +14,10 @@ module Lintrunner
       def parse(output, exit_code, options = {})
         messages = []
         output.each_line do |line|
-
-          match = /(?<name>[^:]*):(?<description>[^:]*):(?<filename>[^:]*):(?<line>\d*)/.match(line)
+          match = /(?<name>[^:]+):\s(?<description>.+):\s(?<filename>[^:]+):(?<line>\d+)/.match(line)
           if match
             messages << Lintrunner::Message.new(
-              filename: options[:filename] || match[:filename],
+              filename: match[:filename],
               line: match["line"].to_i,
               name: match["name"],
               description: match["description"])

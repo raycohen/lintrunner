@@ -24,6 +24,7 @@ require "lintrunner/parser/foodcritic"
 # Runners
 require "lintrunner/runner/base"
 require "lintrunner/runner/diff"
+require "lintrunner/runner/diff_cookbooks"
 require "lintrunner/runner/new_file"
 require "lintrunner/runner/changed_file"
 require "lintrunner/runner/repo"
