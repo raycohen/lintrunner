@@ -7,10 +7,10 @@ module Lintrunner
         before_messages = []
         after_messages = []
         Dir.chdir(path) do
-          prev_sha = git.head.target
+          prev_branch = current_branch
           `git checkout -q #{git_common_ancestor}`
           before_messages = executor.execute(nil)
-          `git checkout -q #{prev_sha}`
+          `git checkout -q #{prev_branch}`
           after_messages = executor.execute(nil)
         end
 
